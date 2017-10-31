@@ -13,7 +13,7 @@
 
 void greeting()
 {
-  cout<<"Hello! This will encrypt secret messages for the penguin army."<<endl;
+  cout<<"Hello! This will decrypt secret messages for the penguin army."<<endl;
   cout<<"Shhh don't tell anybody."<<endl;
   return;
 }
