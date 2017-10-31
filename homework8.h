@@ -14,7 +14,7 @@
 
 //Global constants//
 const int MAX_WORD = 20;//This is the max amount of characters a word can be 
-const int MAX_SENTANCE = 500;//Max amount of characters in a sentance 
+const int MAX_SENTENCE = 500;//Max amount of characters in a sentence 
 const string FILE_NAME = "encrypted.dat"; //This is the name of the input file
 const string OUTPUT_FILE = "decrypted.dat";//This is the name of the output 
 const int MAX_AMT_WORDS = 35; //This is MAX_SENTACNE/MAX_WORD+10 for jibberish
@@ -39,52 +39,52 @@ void greeting();
 void Decrypt_Code(---------------------------);
 
 //Desc: reads in a line of the file.
-//Pre: The array which holds the sentance (string array) and the size
+//Pre: The array which holds the sentence (string array) and the size
 //Post: Returns the first line of the file. 
-void Read_in_Sentance(string sentance[],const int SIZE);
+void Read_in_Sentence(string sentence[],const int SIZE);
 
 //Desc: calculates how many characters have already been read in
 //Pre: The array of the current sentacne for calculation and its size
-//Post: keeps hold of a value so that it knows where to start each sentance
-int File_Track(string sentance[],const int SIZE); 
+//Post: keeps hold of a value so that it knows where to start each sentence
+int File_Track(string sentence[],const int SIZE); 
 
 //Desc: changes she back to he 
 /*Pre: the string variable that the sentence is being kept in,
 replace(the word you wish to replace),replace too(the word you wish to change
 it too)*/
 //Post: chagnes all instances of she back to he 
-void ReplaceWords(string & sentance,const string replace,
+void ReplaceWords(string & sentence,const string replace,
 const string replace_too);
 
-//Desc: Un pair-wise swaps the words in odd sentances
-//Pre: The string variable for the sentance
+//Desc: Un pair-wise swaps the words in odd sentences
+//Pre: The string variable for the sentence
 //Post: swaps the words back into the position they are supposed to be in.
-void UnSwapOdd(string & sentance);
+void UnSwapOdd(string & sentence);
 
 //Desc: Un swaps the first and last word and first word of even sentences 
 //Pre: The string variable for the sentence
 //Post: Swaps the first and last word and fixes punctuation and capitalization
-void UnSwapEven(string & sentance); 
+void UnSwapEven(string & sentence); 
 
 //Desc: un-reverses the spelling of sentences 
 //Pre: the string variable for the sentence in question
 //Post: un reverses spelling of the middle word for odd worded senteances
-void UnReverse(string & sentance); 
+void UnReverse(string & sentence); 
 
 //Desc: changes the position of the apostrophe in words
-//Pre: The string variable for the sentance being changed 
+//Pre: The string variable for the sentence being changed 
 //Post: chagnes where the apostrophe is in words that have one
-void ApostropheChange(string & sentance);
+void ApostropheChange(string & sentence);
 
-//Desc: Randomly inserts phrases that you choose into the sentances 
-/*Pre: the string for the sentance*/
-//Post: Randomly inserts phrases into the sentances throughout the file
-void InsertJibberish(string & sentance); 
+//Desc: Randomly inserts phrases that you choose into the sentences 
+/*Pre: the string for the sentence*/
+//Post: Randomly inserts phrases into the sentences throughout the file
+void InsertJibberish(string & sentence); 
 
 //Desc: outputs the data 
 //Pre: The finished string array after the changes are made,and the array size
 //Post: streams the data onto the next file 
-void OutputData(string sentance[],const int SIZE);
+void OutputData(string sentence[],const int SIZE);
 
 //Desc: Ouputs a goodbye message
 //Pre: none
