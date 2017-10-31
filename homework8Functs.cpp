@@ -1,1 +1,1 @@
-//Fucntion definitions// 
+//Function definitions// 

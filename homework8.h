@@ -1,3 +1,5 @@
+//Programmers: Terry Rorie, Jonah Marz
+
 #ifndef HOMEWORK8_H
 #define HOMEWORK8_H
 
