@@ -11,5 +11,11 @@
 
 
 int main()
-
-return 0;
+{
+  //Variable Declarations//
+  
+  //Greeting//
+  greeting();
+  
+  return 0;
+}
