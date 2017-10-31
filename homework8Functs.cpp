@@ -25,3 +25,11 @@ void goodbye()
   cout<<"This will self destruct in five seconds."<<endl;
   return; 
 }
+
+void ReplaceWords(string & sentance,const string replace,
+const string replace_too)
+{
+  /*My idea for this function is to use the method for looking at  the string
+  word by word; if the word is the "replace" then change it to "replace_too"*/
+  //Feel free to let me know what you think//
+}
