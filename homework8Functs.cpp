@@ -5,5 +5,8 @@
 //Purpose: The implementation files for homework 8
 //Instructor: San Yueng
 
+#include<iostream>
+#include<fstream>
+#include<string>
 
 //Function definitions// 

@@ -5,6 +5,10 @@
 //Purpose: The header file for homework 8
 //Instructor: San Yueng
 
+#include<iostream>
+#include<fstream>
+#include<string>
+
 #ifndef HOMEWORK8_H
 #define HOMEWORK8_H
 
