@@ -13,7 +13,7 @@
 int main()
 {
   //Variable Declarations//
-  string Sentance_Array[MAX_AMT_WORD];//This is the array that is the sentance
+  string Sentence_Array[MAX_AMT_WORD];//This is the array that is the sentance
   
   //Greeting//
   greeting();

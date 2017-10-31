@@ -32,7 +32,7 @@ int File_Track(string sentence[],const int SIZE)
   
   for(int i = 0; i<SIZE; i++)
   {
-    length_read += strlen(sentecne[i]);
+    length_read += strlen(sentence[i]);
   } 
   return length_read; 
 }
