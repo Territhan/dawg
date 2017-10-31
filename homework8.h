@@ -16,6 +16,7 @@
 const int MAX_WORD = 20;//This is the max amount of characters a word can be 
 const int MAX_SENTANCE = 500;//Max amount of characters in a sentance 
 const string FILE_NAME = "encrypted.dat"; //This is the name of the input file
+const string OUTPUT_FILE = "decrypted.dat";//This is the name of the output file 
 const string Jibberish1 = "umm"; //This is randomly inserted 
 const string Jibberish2 = "errr"; //This is randomly inserted 
 const string Jibberish3 = "like"; //This is randomly insterted
