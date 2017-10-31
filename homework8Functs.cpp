@@ -26,6 +26,29 @@ void goodbye()
   return; 
 }
 
+int File_Track(string sentance[],const int SIZE)
+{
+  static int length_read=0; //This is the amount of characters already read in
+  
+  for(int i = 0; i<SIZE; i++)
+  {
+    length_read += strlen(sentacne[i]);
+  } 
+  return length_read; 
+}
+
+void Read_in_Sentance(string sentance[],const int SIZE)
+{
+  ifstream fin; //This is the object to read in data from the input file
+  
+  fin.open(FILE_NAME);
+  fin.ignore(File_Track(sentance[],const int SIZE));
+  
+  
+
+  
+}
+
 void ReplaceWords(string & sentance,const string replace,
 const string replace_too)
 {

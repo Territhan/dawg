@@ -16,7 +16,8 @@
 const int MAX_WORD = 20;//This is the max amount of characters a word can be 
 const int MAX_SENTANCE = 500;//Max amount of characters in a sentance 
 const string FILE_NAME = "encrypted.dat"; //This is the name of the input file
-const string OUTPUT_FILE = "decrypted.dat";//This is the name of the output file 
+const string OUTPUT_FILE = "decrypted.dat";//This is the name of the output 
+const int MAX_AMT_WORDS = 35; //This is MAX_SENTACNE/MAX_WORD+10 for jibberish
 const string Jibberish1 = "umm"; //This is randomly inserted 
 const string Jibberish2 = "errr"; //This is randomly inserted 
 const string Jibberish3 = "like"; //This is randomly insterted
@@ -35,12 +36,17 @@ void greeting();
 //Desc: Decrypts the entire file 
 //Pre: --work in progress wait till end to do--
 //Post: --This will combine all of the decryption to one function--
-string Decrypt_Code(---------------------------);
+void Decrypt_Code(---------------------------);
 
 //Desc: reads in a line of the file.
-/*Pre: an ifstream object for it to read in the file*/
+//Pre: The array which holds the sentance (string array) and the size
 //Post: Returns the first line of the file. 
-string Read_in_Sentance(ifstream fin);
+void Read_in_Sentance(string sentance[],const int SIZE);
+
+//Desc: calculates how many characters have already been read in
+//Pre: The array of the current sentacne for calculation and its size
+//Post: keeps hold of a value so that it knows where to start each sentance
+int File_Track(string sentance[],const int SIZE); 
 
 //Desc: changes she back to he 
 /*Pre: the string variable that the sentence is being kept in,
@@ -74,6 +80,11 @@ void ApostropheChange(string & sentance);
 /*Pre: the string for the sentance*/
 //Post: Randomly inserts phrases into the sentances throughout the file
 void InsertJibberish(string & sentance); 
+
+//Desc: outputs the data 
+//Pre: The finished string array after the changes are made,and the array size
+//Post: streams the data onto the next file 
+void OutputData(string sentance[],const int SIZE);
 
 //Desc: Ouputs a goodbye message
 //Pre: none
