@@ -40,7 +40,9 @@ void Read_in_Sentence(char sentence[][][])
   char sentence_array[MAX_SENTENCE];//this is to put the sentence in an array
   char word_array[]; //this stores the words in the array 
   static int sentence_ctr = 0; //This exists to count the number of sentence
-  int word_ctr = 0; //This exists to count the number of words 
+  int word_ctr = 0; //This exists to count the number of words
+  int tracker = 0;
+  int letter_ctr = 0;
   
   fin.open(FILE_NAME);
   
@@ -48,13 +50,12 @@ void Read_in_Sentence(char sentence[][][])
   fin.getline(sentence_array,('.'||'!'||'?'));     
   fin.close(FILE_NAME); 
   
-  
-  for(int i = 0; i<(sentence_word_count(sentence_array,strlen(sentence_array)))
-  ;i++)
-  {  
-    strcpy(sentence[sentence_ctr][word_ctr][],' ');
-    word_ctr++;
-  }
+  /*for(int i = word_ctr;i<maxwords;i++)
+      {
+        
+      }
+      
+
   return;
 }
 
