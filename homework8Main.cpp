@@ -13,7 +13,11 @@
 int main()
 {
   //Variable Declarations//
-  string Sentence_Array[MAX_AMT_WORD];//This is the array that is the sentance
+  char File_array[][][MAX_WORD];/* This holds the entire file 
+  in one array the first array holds the sentence, the second holds the words,
+  the third holds the characters within the words*/
+  int amount_of_words;//This is the amount of words   
+  
   
   //Greeting//
   greeting();

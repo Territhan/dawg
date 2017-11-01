@@ -17,7 +17,6 @@ const int MAX_WORD = 20;//This is the max amount of characters a word can be
 const int MAX_SENTENCE = 500;//Max amount of characters in a sentence 
 const string FILE_NAME = "encrypted.dat"; //This is the name of the input file
 const string OUTPUT_FILE = "decrypted.dat";//This is the name of the output 
-const int MAX_AMT_WORDS = 35; //This is MAX_SENTACNE/MAX_WORD+10 for jibberish
 const string Jibberish1 = "umm"; //This is randomly inserted 
 const string Jibberish2 = "errr"; //This is randomly inserted 
 const string Jibberish3 = "like"; //This is randomly insterted
@@ -39,9 +38,9 @@ void greeting();
 void Decrypt_Code(---------------------------);
 
 //Desc: reads in a line of the file.
-//Pre: The array which holds the sentence (string array) and the size
+//Pre: array must be ntca, and the size of both arrays
 //Post: Returns the first line of the file. 
-void Read_in_Sentence(string sentence[],const int SIZE);
+void Read_in_Sentence(char sentence[MAX_AMT_WORDS][],const int SIZE);
 
 //Desc: calculates how many characters have already been read in
 //Pre: The array of the current sentacne for calculation and its size
@@ -61,6 +60,11 @@ const string replace_too);
 //Post: swaps the words back into the position they are supposed to be in.
 void UnSwapOdd(string & sentence);
 
+//Desc: counts the amount of words in a sentence 
+//Pre: an ntca array and its size 
+//Post: returns the number of words in a sentence
+void sentence_word_count(const char sentence[],const int SIZE);
+
 //Desc: Un swaps the first and last word and first word of even sentences 
 //Pre: The string variable for the sentence
 //Post: Swaps the first and last word and fixes punctuation and capitalization
@@ -79,7 +83,7 @@ void ApostropheChange(string & sentence);
 //Desc: Randomly inserts phrases that you choose into the sentences 
 /*Pre: the string for the sentence*/
 //Post: Randomly inserts phrases into the sentences throughout the file
-void InsertJibberish(string & sentence); 
+void Destroy_Jibberish(char array[][][],const int SIZE); 
 
 //Desc: outputs the data 
 //Pre: The finished string array after the changes are made,and the array size
