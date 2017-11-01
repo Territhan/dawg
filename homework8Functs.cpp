@@ -57,13 +57,13 @@ void Read_in_Sentence(char sentence[][][])
   return;
 }
 
-void sentence_word_count(const char sentence[],const int SIZE)
+void sentence_word_count(const char sentence[][][],const int SIZE)
 {
   int amt_of_words=0
-  
+  static int sentence_amt
   for(int i = 0; i<SIZE; i++)
   {
-    if(sentence[i]==' ')
+    if(sentence[sentence_amt][amt_of_words][i]==' ')
       amt_of_words++;
   }
   return amt_of_words;
