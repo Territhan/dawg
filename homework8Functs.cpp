@@ -38,15 +38,16 @@ void Read_in_Sentence(char sentence[][][])
 {
   ifstream fin; //This is the object to read in data from the input file
   char sentence_array[MAX_SENTENCE];//this is to put the sentence in an array
+  char word_array[]; //this stores the words in the array 
   static int sentence_ctr = 0; //This exists to count the number of sentence
   int word_ctr = 0; //This exists to count the number of words 
   
   fin.open(FILE_NAME);
   
   fin.ignore(File_Track(sentence_array,MAX_SENTENCE));
-  fin.getline(sentence_array,('.'||'!'||'?'));    
-  
+  fin.getline(sentence_array,('.'||'!'||'?'));     
   fin.close(FILE_NAME); 
+  
   
   for(int i = 0; i<(sentence_word_count(sentence_array,strlen(sentence_array)))
   ;i++)
@@ -57,15 +58,16 @@ void Read_in_Sentence(char sentence[][][])
   return;
 }
 
-void sentence_word_count(const char sentence[][][],const int SIZE)
+int sentence_word_count(const char sentence[][][],const int SIZE)
 {
   int amt_of_words=0
-  static int sentence_amt
+  static int sentence_amt=0
   for(int i = 0; i<SIZE; i++)
   {
     if(sentence[sentence_amt][amt_of_words][i]==' ')
       amt_of_words++;
   }
+  
   return amt_of_words;
 }
 
@@ -97,4 +99,24 @@ void Un_Swap_Odd(char sentence[][][], const int SIZE)
       int word2 = i+1
       
     }
+}
+
+void Destroy_Jibberish(char sentence[][][]);
+{
+  static int sentence_hold = 0; //This keeps track of which sentence
+  int word_ctr = 0; //This keeps track of the amount of words in the sentence
+  
+  if(strcmp(sentence[sentence_hold][word_ctr],Jibberish1==0)
+    strcpy(sentence[sentence_hold][word_ctr],'\0');
+  
+  if(strcmp(sentence[sentence_hold][word_ctr],Jibberish2==0)
+    strcpy(sentence[sentence_hold][word_ctr],'\0');
+  
+  if(strcmp(sentence[sentence_hold][word_ctr],Jibberish3==0)
+    strcpy(sentence[sentence_hold][word_ctr],'\0');
+  
+  if(strcmp(sentence[sentence_hold][word_ctr],Jibberish4==0)
+    strcpy(sentence[sentence_hold][word_ctr],'\0');
+  
+  sentence_hold++;
 }

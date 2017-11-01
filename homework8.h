@@ -60,42 +60,41 @@ const char replace_too[]);
 //Desc: Un pair-wise swaps the words in odd sentences
 //Pre: The string variable for the sentence
 //Post: swaps the words back into the position they are supposed to be in.
-void Un_Swap_Odd(string & sentence);
+void Un_Swap_Odd(char sentence[][][]);
 
 //Desc: counts the amount of words in a sentence 
 //Pre: an ntca array and its size 
 //Post: returns the number of words in a sentence
-void sentence_word_count(const char sentence[],const int SIZE);
+void sentence_word_count(const char sentence[][][],const int SIZE);
 
 //Desc: Un swaps the first and last word and first word of even sentences 
 //Pre: The string variable for the sentence
 //Post: Swaps the first and last word and fixes punctuation and capitalization
-void UnSwapEven(string & sentence); 
+void UnSwapEven(char sentence[][][]); 
 
 //Desc: un-reverses the spelling of sentences 
 //Pre: the string variable for the sentence in question
 //Post: un reverses spelling of the middle word for odd worded senteances
-void UnReverse(string & sentence); 
+void UnReverse(char sentence[][][]); 
 
 //Desc: changes the position of the apostrophe in words
 //Pre: The string variable for the sentence being changed 
 //Post: chagnes where the apostrophe is in words that have one
-void ApostropheChange(string & sentence);
+void ApostropheChange(char sentence[][][]);
 
 //Desc: Randomly inserts phrases that you choose into the sentences 
 /*Pre: the string for the sentence*/
 //Post: Randomly inserts phrases into the sentences throughout the file
-void Destroy_Jibberish(char array[][][],const int SIZE); 
+void Destroy_Jibberish(char sentence[][][]); 
 
 //Desc: outputs the data 
-//Pre: The finished string array after the changes are made,and the array size
+//Pre: The finished array of data 
 //Post: streams the data onto the next file 
-void OutputData(string sentence[],const int SIZE);
+void OutputData(char sentence[][][]);
 
 //Desc: Ouputs a goodbye message
 //Pre: none
 //Post: prints a goodbye message on screen
 void goodbye();
-
 
 #endif
