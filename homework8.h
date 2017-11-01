@@ -60,7 +60,7 @@ const char replace_too[]);
 //Desc: Un pair-wise swaps the words in odd sentences
 //Pre: The string variable for the sentence
 //Post: swaps the words back into the position they are supposed to be in.
-void UnSwapOdd(string & sentence);
+void Un_Swap_Odd(string & sentence);
 
 //Desc: counts the amount of words in a sentence 
 //Pre: an ntca array and its size 

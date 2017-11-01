@@ -85,3 +85,16 @@ const char replace_too[])
   }
   return;
 }
+
+void Un_Swap_Odd(char sentence[][][], const int SIZE)
+{
+  int max = sentence_word_count(sentence[], SIZE);//Max words in sentence
+  int replace_ctr = 0;//Words replaced in sentence
+  int sentence_ctr = 0;//Current sentence #
+
+    for(int i=replace_ctr;i<=max;i++)
+    { 
+      int word2 = i+1
+      
+    }
+}
