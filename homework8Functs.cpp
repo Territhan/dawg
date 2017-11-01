@@ -48,7 +48,8 @@ void Read_in_Sentence(char sentence[][][])
   
   fin.ignore(File_Track(sentence_array,MAX_SENTENCE));
   fin.getline(sentence_array,('.'||'!'||'?'));
-  //sentence_amt++;  
+  //sentence_amt++;
+  //sentence_count(sentence_amt);  
   fin.close(FILE_NAME); 
   
   /*for(int i = word_ctr;i<maxwords;i++)
