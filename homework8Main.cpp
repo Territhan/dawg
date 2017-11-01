@@ -8,7 +8,7 @@
 #include<iostream>
 #include<fstream>
 #include<string>
-
+#include "homework8.h"
 
 int main()
 {
