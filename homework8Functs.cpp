@@ -37,7 +37,7 @@ int File_Track(char sentence[],const int SIZE)
 void Read_in_Sentence(char sentence[][][])
 {
   ifstream fin; //This is the object to read in data from the input file
-  char sentence_array[MAX_SENTENCE];
+  char sentence_array[MAX_SENTENCE];//this is to put the sentence in an array
   static int sentence_ctr = 0; //This exists to count the number of sentence
   int word_ctr = 0; //This exists to count the number of words 
   
@@ -69,10 +69,19 @@ void sentence_word_count(const char sentence[],const int SIZE)
   return amt_of_words;
 }
 
-void Replace_Words(string & sentence,const string replace,
-const string replace_too)
+void Replace_Words(char sentence[][][],const char replace[],
+const char replace_too[])
 {
-  /*My idea for this function is to use the method for looking at  the string
-  word by word; if the word is the "replace" then change it to "replace_too"*/
-  //Feel free to let me know what you think//
+  char sentence_array[MAX_SENTENCE];//this is to put the sentence in an array
+  static int replace_count=0;//This is to count what sentence its on
+  int word_ctr=0; //This exists to count the number of words 
+  
+  for(int i=0;i<sentence_word_count(sentence_array,strlen(sentence_array)))
+  {
+    if(strcmp(sentence[replace_count][word_ctr],replace)==0)
+    {
+      strcpy(sentence[replace_count][word_ctr]=replace_too);
+    }
+  }
+  return;
 }

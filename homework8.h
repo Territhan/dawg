@@ -54,8 +54,8 @@ int File_Track(string sentence[],const int SIZE);
 replace(the word you wish to replace),replace too(the word you wish to change
 it too)*/
 //Post: chagnes all instances of she back to he 
-void ReplaceWords(string & sentence,const string replace,
-const string replace_too);
+void Replace_Words(char sentence[][][],const char replace[],
+const char replace_too[]);
 
 //Desc: Un pair-wise swaps the words in odd sentences
 //Pre: The string variable for the sentence
