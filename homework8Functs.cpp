@@ -43,11 +43,12 @@ void Read_in_Sentence(char sentence[][][])
   int word_ctr = 0; //This exists to count the number of words
   int tracker = 0;
   int letter_ctr = 0;
-  
+  //static int sentence_amt = 0;
   fin.open(FILE_NAME);
   
   fin.ignore(File_Track(sentence_array,MAX_SENTENCE));
-  fin.getline(sentence_array,('.'||'!'||'?'));     
+  fin.getline(sentence_array,('.'||'!'||'?'));
+  //sentence_amt++;  
   fin.close(FILE_NAME); 
   
   /*for(int i = word_ctr;i<maxwords;i++)
@@ -59,21 +60,14 @@ void Read_in_Sentence(char sentence[][][])
   return;
 }
 
-int sentence_count(const char setence[][][], const int SIZE)
+int sentence_count(const int sentence_add)
 {
-  int amt_of_sentences=0;
-  int word_ct; 
   
-  word_ct=sentence_word_count(sentence,MAX_SENTENCE);
+  static int amt_of_sentences;
   
-  for(int i = 0; i<SIZE; i++)
-  {
-    if(sentence[sentence_amt][amt_of_words][i]=='.'||
-    sentence[sentence_amt][amt_of_words][i]=='?'||
-    sentence[sentence_amt][amt_of_words][i]=='!')
-      amt_of_sentences++;
-  }
+  amt_of_sentences+=sentence_add;
   
+  return amt_of_sentences;
 }
 
 int sentence_word_count(const char sentence[][][],const int SIZE)
