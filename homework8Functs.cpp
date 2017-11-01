@@ -58,10 +58,27 @@ void Read_in_Sentence(char sentence[][][])
   return;
 }
 
+int sentence_count(const char setence[][][], const int SIZE)
+{
+  int amt_of_sentences=0;
+  int word_ct; 
+  
+  word_ct=sentence_word_count(sentence,MAX_SENTENCE);
+  
+  for(int i = 0; i<SIZE; i++)
+  {
+    if(sentence[sentence_amt][amt_of_words][i]=='.'||
+    sentence[sentence_amt][amt_of_words][i]=='?'||
+    sentence[sentence_amt][amt_of_words][i]=='!')
+      amt_of_sentences++;
+  }
+  
+}
+
 int sentence_word_count(const char sentence[][][],const int SIZE)
 {
-  int amt_of_words=0
-  static int sentence_amt=0
+  int amt_of_words=0;
+  static int sentence_amt=0;
   for(int i = 0; i<SIZE; i++)
   {
     if(sentence[sentence_amt][amt_of_words][i]==' ')
@@ -74,11 +91,10 @@ int sentence_word_count(const char sentence[][][],const int SIZE)
 void Replace_Words(char sentence[][][],const char replace[],
 const char replace_too[])
 {
-  char sentence_array[MAX_SENTENCE];//this is to put the sentence in an array
   static int replace_count=0;//This is to count what sentence its on
   int word_ctr=0; //This exists to count the number of words 
   
-  for(int i=0;i<sentence_word_count(sentence_array,strlen(sentence_array)))
+  for(int i=0;i<sentence_word_count(sentence,MAX_WORD))
   {
     if(strcmp(sentence[replace_count][word_ctr],replace)==0)
     {
