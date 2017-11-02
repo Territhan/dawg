@@ -44,18 +44,12 @@ void Decrypt_Code(---------------------------);
 //Post: Returns the file. 
 string Read_in_File(string & File);
 
-//Desc: calculates how many characters have already been read in
-//Pre: The array of the current sentacne for calculation and its size
-//Post: keeps hold of a value so that it knows where to start each sentence
-int File_Track(string sentence[],const int SIZE); 
-
-//Desc: changes she back to he 
+//Desc: changes replace to replace_too  
 /*Pre: the string variable that the sentence is being kept in,
 replace(the word you wish to replace),replace too(the word you wish to change
 it too)*/
-//Post: chagnes all instances of she back to he 
-void Replace_Words(char sentence[][][],const char replace[],
-const char replace_too[]);
+//Post: chagnes all instances of replace to replace_too 
+void Replace_Words(string&word,const string replace,const string replace_too);
 
 //Desc: Un pair-wise swaps the words in odd sentences
 //Pre: The string variable for the sentence
@@ -63,9 +57,9 @@ const char replace_too[]);
 void Un_Swap_Odd(char sentence[][][]);
 
 //Desc: counts the amount of words in a sentence 
-//Pre: an ntca array and its size 
+//Pre:  the const string of the sentence you wish to count
 //Post: returns the number of words in a sentence
-void sentence_word_count(const char sentence[][][],const int SIZE);
+int sentence_word_count(const string sentence);
 
 //Desc: Un swaps the first and last word and first word of even sentences 
 //Pre: The string variable for the sentence
@@ -77,20 +71,26 @@ void UnSwapEven(char sentence[][][]);
 //Post: un reverses spelling of the middle word for odd worded senteances
 void UnReverse(char sentence[][][]); 
 
-//Desc: changes the position of the apostrophe in words
-//Pre: The string variable for the sentence being changed 
-//Post: chagnes where the apostrophe is in words that have one
-void ApostropheChange(char sentence[][][]);
+//Desc: changes the position of the apostrophe in the passed word
+//Pre: The string variable for the word being changed 
+//Post: chagnes where the apostrophe is in word that is passed
+void apostrophe_change(string & word);
 
-//Desc: Randomly inserts phrases that you choose into the sentences 
-/*Pre: the string for the sentence*/
-//Post: Randomly inserts phrases into the sentences throughout the file
-void Destroy_Jibberish(char sentence[][][]); 
+//Desc: Destroys the random jibberish 
+//Pre: the string for the word pass by reference 
+//Post: checks if the word is jibberish and deletes it if it is
+void Destroy_Jibberish(string & word); 
 
 //Desc: outputs the data 
 //Pre: The finished array of data 
 //Post: streams the data onto the next file 
-void OutputData(char sentence[][][]);
+void OutputData(string decrypted_file);
+
+//Desc: Breaks the sentence into the words
+/*Pre: The encrypted sentence string object and a blank object for word end 
+and word  length*/
+//Post: returns the current value for the word in the sentence. 
+string break_into_words(const string sentence,int&word_end,int&word_len);
 
 //Desc: Ouputs a goodbye message
 //Pre: none

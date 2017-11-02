@@ -31,7 +31,7 @@ int main()
   for(int i = 0; i<=sentence_amt;i++)
   {
     encrypted_sentence= break_into_sentence(encryted_data,even_or_odd);
-    decrypted_sentence=(encryted_sentence,even_or_odd);
+    decrypted_sentence=decrypt_sentence(encryted_sentence,even_or_odd);
   }
   
   

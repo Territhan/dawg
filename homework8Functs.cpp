@@ -171,6 +171,7 @@ string break_into_words(const string sentence,int&word_end,int&word_len)
   static int t = 0; //This is a placeholder value 
   bool word_found = false;
   static int i =0; 
+  bool last_word=false;//This is to check if it is the last word
   do
   {
     if(sentence[i]==' ')
@@ -188,7 +189,8 @@ string break_into_words(const string sentence,int&word_end,int&word_len)
     }
     i++;
   }
-  while(i<strlen(sentence)&&!word_found);
+  while(i<sentence.lenth()&&!word_found);
+  if
   word_end=i-1;
   word_len=word.length(); 
   return word; 
@@ -217,7 +219,7 @@ void Un_Swap_Odd(char sentence[][][], const int SIZE)
     }
 }
 
-void Destroy_Jibberish(string & word);
+void Destroy_Jibberish(string & word)
 {
   
   if(word==Jibberish1)
