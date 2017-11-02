@@ -37,8 +37,9 @@ string decrypt_sentence(const string sentence,place);
   amt_of_words=sentence_word_count(sentence);
   //loops and decrypts the sentence word by word//   
   for(int i = 0; i<amt_of_words; i++)
-  {
+  { 
     word=break_into_words(sentence,word_end,word_length);
+    Destroy_Jibberish(word);  
     Replace_Words(word,"she","he");
     Replace_Words(word,"her","his");
     Replace_Words(word,"my","your");
@@ -54,7 +55,7 @@ string decrypt_sentence(const string sentence,place);
       
     }
     apostrophe_change(word); 
-    Destroy_Jibberish(word); 
+     
   }
   
   
@@ -68,7 +69,7 @@ string Read_in_File()
  
   fin.open(FILE_NAME);
   //This reads in the entire file 
-  getline(fin,File,'\0');  
+  getline(fin,File);  
   
   fin.close(FILE_NAME);
   
@@ -98,33 +99,35 @@ int sentence_word_count(const string sentence)
     if(sentence[i]==' ')
       amt_of_words++
   }
-  return amt_of_words;
+  return amt_of_words+1;
 }
 
 void apostrophe_change(string & word)
 {
   char swap_char;//This is a placeholder for swapping
   int last_character; //This is the index of the last character 
+  
   last_character=word.length(); 
+  
   for(int i = 0; i<word.length();i++)
   {
-    if(i==0&&word[i]=='\'')
+    if(i==last_character&&word[i]=='\'')
     {
-     word.erase(0,1); 
-     word+='\'';
+     word.erase(last_character,1); 
+     word.insert(0,'\'');
      return;
     }
     else if(word[i]=='\'')
     {
-      swap_char=word[i-1];
-      word[i-1]='\'';
+      swap_char=word[i+1];
+      word[i+1]='\'';
       word[i]=swap_char;
     }
   }
   return;
 }
 
-string break_into_sentences(const string Data,string & place)
+string break_into_sentence(const string Data,string & place)
 { 
   string sentence; //This is the return value of the function
   static int t = 0;//This is a placeholder value
@@ -144,7 +147,7 @@ string break_into_sentences(const string Data,string & place)
         }
         else
         {  
-          sentence=Data.substr(t+2,i-t);
+          sentence=Data.substr(t+2,i-t+2);
         }
         t=i;
         sentence_found=true; 
@@ -158,7 +161,7 @@ string break_into_sentences(const string Data,string & place)
       
       i++
     }
-    while(i<strlen(Data)&&!sentence_found);    
+    while(i<Data.lenth()&&!sentence_found);    
   return sentence;  
 }
 
@@ -178,7 +181,7 @@ string break_into_words(const string sentence,int&word_end,int&word_len)
       }
       else
       {
-        word=sentence.substr(t+1,i-t);
+        word=sentence.substr(t+1,i-t+1);
       }
       word_found=true;
       t=i;
@@ -186,8 +189,8 @@ string break_into_words(const string sentence,int&word_end,int&word_len)
     i++;
   }
   while(i<strlen(sentence)&&!word_found);
-  word_end=i;
-  word_len=strlen(word); 
+  word_end=i-1;
+  word_len=word.length(); 
   return word; 
     
 }  

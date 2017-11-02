@@ -20,6 +20,7 @@ int main()
   string even_or_odd;  
   string decrypted_data; 
   string decrypted_sentence; 
+  string encrypted_sentence;
   
   //Greeting//
   greeting();
@@ -29,8 +30,8 @@ int main()
   sentence_amt=sentence_count(encryted_data); 
   for(int i = 0; i<=sentence_amt;i++)
   {
-    break_into_sentence(encryted_data,even_or_odd);
-    decrypted_sentence=(encryted_data,even_or_odd);
+    encrypted_sentence= break_into_sentence(encryted_data,even_or_odd);
+    decrypted_sentence=(encryted_sentence,even_or_odd);
   }
   
   
