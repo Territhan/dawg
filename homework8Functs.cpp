@@ -34,14 +34,10 @@ int File_Track(char sentence[],const int SIZE)
   return length_read; 
 }
 
-void Read_in_File(string & File)
+string Read_in_File(string & File)
 {
   ifstream fin; //This is the object to read in data from the input file
   string word; //this stores the words in the array 
-  static int sentence_ctr = 0; //This exists to count the number of sentence
-  int word_ctr = 0; //This exists to count the number of words
-  int tracker = 0;
-  int letter_ctr = 0;
  
   fin.open(FILE_NAME);
   //This reads in the entire file 
@@ -49,17 +45,7 @@ void Read_in_File(string & File)
   
   fin.close(FILE_NAME);
    
-  
-  for(int i = 0;i<sentence_amt;i++)
-  {
-    word_ctr=sentence_word_count(sentence[][][],MAX_WORD,i);
-  for(int i = 0;i<word_ctr;i++)
-      {
-        strcpy(word_array[i],sentence_array,);   
-      }
-      
-
-  return;
+  return File;
 }
 
 int sentence_count(const string sentence_add)
