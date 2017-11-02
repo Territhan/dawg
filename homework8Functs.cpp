@@ -26,7 +26,7 @@ void goodbye()
   return; 
 }
 
-string decrypt_sentence(const string sentence,place);
+string decrypt_sentence(const string sentence,place)
 {
   int amt_of_words; //The amount of words in the sentence
   string word;//This is the current word in the sentence being deliberated 
@@ -46,16 +46,7 @@ string decrypt_sentence(const string sentence,place);
     Replace_Words(word,"there","their");
     Replace_Words(word,"I","you");
     Replace_Words(word,"frogs","penguins"); 
-    if(place=="even")
-    {
-      
-    }
-    if(place=="odd");
-    {
-      
-    }
     apostrophe_change(word); 
-     
   }
   
   

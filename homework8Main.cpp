@@ -31,6 +31,14 @@ int main()
   for(int i = 0; i<=sentence_amt;i++)
   {
     encrypted_sentence= break_into_sentence(encryted_data,even_or_odd);
+    if(even_or_odd=="even")
+    {
+      
+    }
+    if(even_or_odd=="odd");
+    {
+      
+    }
     decrypted_sentence=decrypt_sentence(encryted_sentence,even_or_odd);
   }
   

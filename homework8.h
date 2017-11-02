@@ -34,10 +34,10 @@ const string Jibberish4 = "nstuff"; //This is randomly inserted
 //Post: Prints a greeting message on screen.
 void greeting();
 
-//Desc: Decrypts the entire file 
-//Pre: --work in progress wait till end to do--
+//Desc: Decrypts the sentence passed in 
+//Pre: The sentence being passed in for decryption and it's even/odd status
 //Post: --This will combine all of the decryption to one function--
-void Decrypt_Code(---------------------------);
+string decrypt_sentence(const string sentence,place);
 
 //Desc: reads the file.
 //Pre: string object
@@ -91,6 +91,11 @@ void OutputData(string decrypted_file);
 and word  length*/
 //Post: returns the current value for the word in the sentence. 
 string break_into_words(const string sentence,int&word_end,int&word_len);
+
+//Desc: Breaks the Data sentence by sentence 
+//Pre: The Data set read in and the object to determine if it's even or odd
+//Post: Returns the string of the sentence about to be decrypted
+string break_into_sentence(const string Data,string & place);
 
 //Desc: Ouputs a goodbye message
 //Pre: none
