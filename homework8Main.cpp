@@ -13,16 +13,28 @@
 int main()
 {
   //Variable Declarations//
-  string file_data;/* This holds the entire file 
+  string encryted_data;/* This holds the entire file 
   in one array the first array holds the sentence, the second holds the words,
   the third holds the characters within the words*/
-     
-  
+  int sentence_amt; //This is the total amount of sentences   
+  string even_or_odd;  
+  string decrypted_data; 
+  string decrypted_sentence; 
   
   //Greeting//
   greeting();
   //Read in Data//
-  Read_in_File(file_data);
+  encryted_data=Read_in_File();
+  //Get sentences and decrypt them//
+  sentence_amt=sentence_count(encryted_data); 
+  for(int i = 0; i<=sentence_amt;i++)
+  {
+    break_into_sentence(encryted_data,even_or_odd);
+    decrypted_sentence=(encryted_data,even_or_odd);
+  }
+  
+  
+  
   
   //Goodbye//
   goodbye(); 
