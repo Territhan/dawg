@@ -38,7 +38,7 @@ void Read_in_Sentence(char sentence[][][])
 {
   ifstream fin; //This is the object to read in data from the input file
   char sentence_array[MAX_SENTENCE];//this is to put the sentence in an array
-  char word_array[]; //this stores the words in the array 
+  string word; //this stores the words in the array 
   static int sentence_ctr = 0; //This exists to count the number of sentence
   int word_ctr = 0; //This exists to count the number of words
   int tracker = 0;
@@ -48,13 +48,16 @@ void Read_in_Sentence(char sentence[][][])
   
   fin.ignore(File_Track(sentence_array,MAX_SENTENCE));
   fin.getline(sentence_array,('.'||'!'||'?'));
+  
   //sentence_amt++;
   //sentence_count(sentence_amt);  
   fin.close(FILE_NAME); 
-  
-  /*for(int i = word_ctr;i<maxwords;i++)
+  for(int i = 0;i<sentence_amt;i++)
+  {
+    word_ctr=sentence_word_count(sentence[][][],MAX_WORD,i);
+  /*for(int i = 0;i<word_ctr;i++)
       {
-        
+        strcpy(word_array[i],sentence_array,);   
       }
       
 
@@ -71,16 +74,15 @@ int sentence_count(const int sentence_add)
   return amt_of_sentences;
 }
 
-int sentence_word_count(const char sentence[][][],const int SIZE)
+int sentence_word_count(const char sentence[][][],const int SIZE,
+const int sentence_num)
 {
   int amt_of_words=0;
-  static int sentence_amt=0;
   for(int i = 0; i<SIZE; i++)
   {
-    if(sentence[sentence_amt][amt_of_words][i]==' ')
+    if(sentence[sentence_num][amt_of_words][i]==' ')
       amt_of_words++;
   }
-  
   return amt_of_words;
 }
 
