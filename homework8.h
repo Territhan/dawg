@@ -39,10 +39,10 @@ void greeting();
 //Post: --This will combine all of the decryption to one function--
 void Decrypt_Code(---------------------------);
 
-//Desc: reads in a line of the file.
-//Pre: array must be ntca, and the size of both arrays
-//Post: Returns the first line of the file. 
-void Read_in_Sentence(char sentence[MAX_AMT_WORDS][],const int SIZE);
+//Desc: reads the file.
+//Pre: string object
+//Post: Returns the file. 
+string Read_in_File(string & File);
 
 //Desc: calculates how many characters have already been read in
 //Pre: The array of the current sentacne for calculation and its size

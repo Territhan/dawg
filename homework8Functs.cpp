@@ -26,7 +26,7 @@ void goodbye()
   return; 
 }
 
-int File_Track(char sentence[],const int SIZE)
+int File_Track()
 {
   static int length_read=0; //This is the amount of characters already read in
   //This just increases the length of the static variable 
@@ -36,19 +36,19 @@ int File_Track(char sentence[],const int SIZE)
 
 string Read_in_File(string & File)
 {
-  ifstream fin; //This is the object to read in data from the input file
-  string word; //this stores the words in the array 
+  ifstream fin; //This is the object to read in data from the input file 
  
   fin.open(FILE_NAME);
   //This reads in the entire file 
   getline(fin,File,'\0');  
   
   fin.close(FILE_NAME);
-   
+  
+  
   return File;
 }
 
-int sentence_count(const string sentence_add)
+int sentence_count(const string Data)
 {
   int sentence_amount = 0;
   for(int i = 0;i<strlen(Data);i++; 
@@ -56,21 +56,19 @@ int sentence_count(const string sentence_add)
     if(Data[i]=='?'||Data[i]=='!'||Data[i]=='.')
     {
       sentence_amount++;
-    }  
-    i++;       
+    }         
   }
   
   return sentence_amount;
 }
 
-int sentence_word_count(const char sentence[][][],const int SIZE,
-const int sentence_num)
+int sentence_word_count(const string Data)
 {
   int amt_of_words=0;
-  for(int i = 0; i<SIZE; i++)
+  for(int i = 0; i<strlen(Data); i++)
   {
-    if(sentence[sentence_num][amt_of_words][i]==' ')
-      amt_of_words++;
+    if(Data[i]==' ')
+      amt_of_words++
   }
   return amt_of_words;
 }

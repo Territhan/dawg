@@ -13,14 +13,16 @@
 int main()
 {
   //Variable Declarations//
-  char File_array[][][MAX_WORD];/* This holds the entire file 
+  string file_data;/* This holds the entire file 
   in one array the first array holds the sentence, the second holds the words,
   the third holds the characters within the words*/
-  int amount_of_words;//This is the amount of words   
+     
   
   
   //Greeting//
   greeting();
+  //Read in Data//
+  Read_in_File(file_data);
   
   //Goodbye//
   goodbye(); 
