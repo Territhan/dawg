@@ -48,10 +48,47 @@ string decrypt_sentence(const string sentence,place)
     Replace_Words(word,"frogs","penguins"); 
     apostrophe_change(word); 
   }
-  
-  
-  
+ 
 }
+
+void UnReverse(string & sentence)
+{
+  string middle_word; //This is the actual string of the middle word 
+  int middle_word_num; //This is the middle word of the sentence 
+  int u=0;//This is a placeholder value to tell it how many times to loop
+  static int l = 0; //This is set as a placeholder for where you are
+  string new_middle_word;//This is the new middle word of the string 
+  int middle_word_length;//length of the middle word 
+  int middle_word_pos;//The start position of the middle word 
+  
+  middle_word_num=(sentence_word_count(sentence)+1)/2;
+  
+  do
+  {  
+    if(sentence[i]==' ')
+    {
+      u++;
+      if(u==middle_word_num)
+      {  
+        middle_word=sentence.substr(l+1,i-(l+1));
+        middle_word_pos=l+1;
+        word_found=true;
+        l=0;
+      }  
+      l=i;
+    }
+    i++;
+  }
+  while(!word_found);
+  middle_word_length=middle_word.length(); 
+  
+  for(int i = middle_word_length-1; i=>0; i--)
+  {
+    new_middle_word+=middle_word[i];
+  }
+  sentence.replace(middle_word_pos,middle_word_length,new_middle_word);
+  return;
+}  
 
 string Read_in_File()
 {
@@ -138,7 +175,7 @@ string break_into_sentence(const string Data,string & place)
         }
         else
         {  
-          sentence=Data.substr(t+2,i-t+2);
+          sentence=Data.substr(t+2,i-(t+2));
         }
         t=i;
         sentence_found=true; 
@@ -173,15 +210,18 @@ string break_into_words(const string sentence,int&word_end,int&word_len)
       }
       else
       {
-        word=sentence.substr(t+1,i-t+1);
+        word=sentence.substr(t+1,i-(t+1));
       }
       word_found=true;
       t=i;
     }
     i++;
   }
-  while(i<sentence.lenth()&&!word_found);
-  if
+  while(i<sentence.length()&&!word_found);
+  if(i+1=sentence.length())
+  {
+    t=0;
+  }
   word_end=i-1;
   word_len=word.length(); 
   return word; 
