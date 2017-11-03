@@ -105,6 +105,15 @@ string Read_in_File()
   return File;
 }
 
+void output(const string &decrypted)
+{
+  ofstream fout;
+
+  fout.open(OUTPUT_FILE);
+  fout << decrypted;
+  fout.close();
+}
+
 int sentence_count(const string Data)
 {
   int sentence_amount = 0;
