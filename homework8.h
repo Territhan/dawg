@@ -18,7 +18,6 @@ const int MAX_WORD = 20;//This is the max amount of characters a word can be
 const int MAX_SENTENCE = 500;//Max amount of characters in a sentence 
 const string FILE_NAME = "encrypted.dat"; //This is the name of the input file
 const string OUTPUT_FILE = "decrypted.dat";//This is the name of the output 
-const int MAX_AMT_WORDS = 35; //This is MAX_SENTENCE/MAX_WORD+10 for jibberish
 const string Jibberish1 = "umm"; //This is randomly inserted 
 const string Jibberish2 = "errr"; //This is randomly inserted 
 const string Jibberish3 = "like"; //This is randomly insterted
@@ -54,7 +53,7 @@ void Replace_Words(string&word,const string replace,const string replace_too);
 //Desc: Un pair-wise swaps the words in odd sentences
 //Pre: The string variable for the sentence
 //Post: swaps the words back into the position they are supposed to be in.
-void Un_Swap_Odd(char sentence[][][]);
+void Un_Swap_Odd(string &sentence);
 
 //Desc: counts the amount of words in a sentence 
 //Pre:  the const string of the sentence you wish to count
@@ -66,10 +65,10 @@ int sentence_word_count(const string sentence);
 //Post: returns the value of the amount of sentences
 int sentence_count(const string Data);
 
-//Desc: Un swaps the first and last word and first word of even sentences 
+//Desc: Un swaps the first and last word and first word of even sentences
 //Pre: The string variable for the sentence
 //Post: Swaps the first and last word and fixes punctuation and capitalization
-void UnSwapEven(char sentence[][][]); 
+void even_replace(string & sentence); 
 
 //Desc: un-reverses the spelling of sentences 
 //Pre: the string variable for the sentence in question

@@ -47,6 +47,9 @@ string decrypt_sentence(const string sentence,place)
     Replace_Words(word,"I","you");
     Replace_Words(word,"frogs","penguins"); 
     apostrophe_change(word); 
+    
+    decrypt_sentence+=word;
+    decrypt_sentence+='\''    
   }
  
 }
@@ -276,6 +279,10 @@ void even_replace(string & sentence)
     sentence.replace(first_word_pos,last_word_length,last_word);
     sentence.replace(last_word_pos,first_word_length,first_word);
   }while(i<=sentence.length());
+  if(word_count%2==1)
+  {
+    UnReverse(sentence);
+  }
   return;
   
 }

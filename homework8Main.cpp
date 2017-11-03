@@ -33,13 +33,15 @@ int main()
     encrypted_sentence= break_into_sentence(encryted_data,even_or_odd);
     if(even_or_odd=="even")
     {
-      
+      even_replace(encrypted_sentence);
     }
     if(even_or_odd=="odd");
     {
-      
+      Un_swap_odd(encryted_data);
     }
     decrypted_sentence=decrypt_sentence(encryted_sentence,even_or_odd);
+    
+    decrypted_data+=decrypted_sentence;  
   }
   
   
