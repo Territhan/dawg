@@ -110,9 +110,10 @@ string Read_in_File()
 
 void output(const string &decrypted)
 {
-  ofstream fout;
+  ofstream fout; //This is the object to read in data from the input file
 
   fout.open(OUTPUT_FILE);
+  //This outputs the decrypted string variable
   fout << decrypted;
   fout.close(OUTPUT_FILE);
 
