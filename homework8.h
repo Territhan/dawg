@@ -74,7 +74,7 @@ void UnSwapEven(char sentence[][][]);
 //Desc: un-reverses the spelling of sentences 
 //Pre: the string variable for the sentence in question
 //Post: un reverses spelling of the middle word for odd worded senteances
-void UnReverse(char sentence[][][]); 
+void UnReverse(string & sentence);
 
 //Desc: changes the position of the apostrophe in the passed word
 //Pre: The string variable for the word being changed 

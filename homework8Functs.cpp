@@ -230,9 +230,12 @@ string break_into_words(const string sentence,int&word_end,int&word_len)
 
 void Replace_Words(string&word,const string replace,const string replace_too)
 {
-  
-  if(word==replace)
-    word=replace_too;
+  switch(word)
+  {
+    case replace:
+      word=replace_too;
+      break;
+  }
 
   return;
 }
