@@ -246,6 +246,7 @@ void Un_Swap_Odd(string &sentence)
   bool word_found = false;
   bool last_word=false;
   string words[wordCnt];
+  string temp;
   //Copied from break_into_words
   for(i;i<wordCnt;i++)
   {
@@ -267,20 +268,20 @@ void Un_Swap_Odd(string &sentence)
       j++
     } while(i<sentence.length()&&!word_found);
   }
-  sentence = '\0';
   for(int k=0;k<wordCnt;k+2)
   {
-    strcat(sentence,words[k+1]);
-    strcat(sentence,' ');
-    strcat(sentence,words[k]);
-    strcat(sentence,' ');
+    strcat(temp,words[k+1]);
+    strcat(temp,' ');
+    strcat(temp,words[k]);
+    strcat(temp,' ');
   }
   if(wordCnt%2==0)
   {
     k--;
-    strcat(sentence,words[k]);
-    strcat(sentence,' ');
+    strcat(temp,words[k]);
+    strcat(temp,' ');
   }
+  sentence = temp;
   return;
 }
 
