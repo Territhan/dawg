@@ -108,6 +108,15 @@ string Read_in_File()
   return File;
 }
 
+void output(const string &decrypted)
+{
+  ofstream fout;
+
+  fout.open(OUTPUT_FILE);
+  fout << decrypted;
+  fout.close();
+}
+
 int sentence_count(const string Data)
 {
   int sentence_amount = 0;
@@ -240,6 +249,7 @@ void Replace_Words(string&word,const string replace,const string replace_too)
   return;
 }
 
+<<<<<<< HEAD
 void even_replace(string & sentence)
 {
   string first_word; //This is the actual string of the first word 
@@ -288,6 +298,9 @@ void even_replace(string & sentence)
 }
 
 void Un_Swap_Odd(string &sentence)
+=======
+void Un_Swap_Odd(string & sentence)
+>>>>>>> d8510cecda3beab244deb4d4a0803f995199b715
 {
   int wordCnt = sentence_word_count(const string sentence);
   int t = 0;
@@ -318,13 +331,6 @@ void Un_Swap_Odd(string &sentence)
       j++
     } while(i<sentence.length()&&!word_found);
   }
-  
-  for(int k=0;k<wordCnt;k+2)
-  {
-    sentence+=words[k+1];
-    sentence+=' ';
-    strcat(sentence,words[k]);
-    strcat(sentence,' ');
   for(int k=0;k<wordCnt;k+2)
   {
     strcat(temp,words[k+1]);
