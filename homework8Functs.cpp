@@ -239,6 +239,44 @@ void Replace_Words(string&word,const string replace,const string replace_too)
 
 void even_replace(string & sentence)
 {
+  string first_word; //This is the actual string of the first word 
+  int first_word_pos; //This is the first word of the sentence 
+  int u=0;//This is a placeholder value to tell it how many times to loop
+  static int l = 0; //This is set as a placeholder for where you are
+  string swap_word;//This is the new middle word of the string 
+  int first_word_length;//length of the middle word 
+  int last_word_length;//The length of the last word
+  int last_word_pos;//This is the start position of the last word   
+  string last_word;//This is the last word string 
+  char punctuation_mark;//This is the punctuation_mark on the last word 
+  word_count=(sentence_word_count(sentence));
+  
+  do
+  {  
+    if(sentence[i]==' ')
+    {
+      u++;
+      if(u==1)
+      {  
+        first_word=sentence.substr(0,i-1);
+        first_word_pos=0;
+        first_word_length=first_word.length();
+      }  
+      if(u==word_count)
+      {
+        sentence[i-1]=punctuation_mark;
+        last_word=sentence.substr(l+1,i-(l+2));
+        last_word_pos=l+1;
+        last_word_length=last_word.length();
+      }
+      l=i;
+    }
+    i++;
+    swap_word=first_word;
+    sentence.replace(first_word_pos,last_word_length,last_word);
+    sentence.replace(last_word_pos,first_word_length,first_word);
+  }while(i<=sentence.length());
+  return;
   
 }
 
@@ -251,6 +289,7 @@ void Un_Swap_Odd(string &sentence)
   bool word_found = false;
   bool last_word=false;
   string words[wordCnt];
+  string temp;
   //Copied from break_into_words
   for(i;i<wordCnt;i++)
   {
@@ -279,13 +318,20 @@ void Un_Swap_Odd(string &sentence)
     sentence+=' ';
     strcat(sentence,words[k]);
     strcat(sentence,' ');
+  for(int k=0;k<wordCnt;k+2)
+  {
+    strcat(temp,words[k+1]);
+    strcat(temp,' ');
+    strcat(temp,words[k]);
+    strcat(temp,' ');
   }
   if(wordCnt%2==0)
   {
     k--;
-    strcat(sentence,words[k]);
-    strcat(sentence,' ');
+    strcat(temp,words[k]);
+    strcat(temp,' ');
   }
+  sentence = temp;
   return;
 }
 
