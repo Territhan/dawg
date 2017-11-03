@@ -281,7 +281,7 @@ void Un_Swap_Odd(string &sentence)
     strcat(sentence,words[k]);
     strcat(sentence,' ');
   }
-  return sentence;
+  return;
 }
 
 void Destroy_Jibberish(string & word)
