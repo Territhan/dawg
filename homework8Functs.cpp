@@ -114,7 +114,9 @@ void output(const string &decrypted)
 
   fout.open(OUTPUT_FILE);
   fout << decrypted;
-  fout.close();
+  fout.close(OUTPUT_FILE);
+
+  return;
 }
 
 int sentence_count(const string Data)
