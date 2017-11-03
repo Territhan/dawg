@@ -61,6 +61,11 @@ void Un_Swap_Odd(char sentence[][][]);
 //Post: returns the number of words in a sentence
 int sentence_word_count(const string sentence);
 
+//Desc: counts the total amount of sentences
+//Pre: the entire Data set being read in 
+//Post: returns the value of the amount of sentences
+int sentence_count(const string Data);
+
 //Desc: Un swaps the first and last word and first word of even sentences 
 //Pre: The string variable for the sentence
 //Post: Swaps the first and last word and fixes punctuation and capitalization
