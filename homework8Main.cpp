@@ -43,10 +43,7 @@ int main()
     
     decrypted_data+=decrypted_sentence;  
   }
-  
-  
-  
-  
+  output(decrypted_data);
   //Goodbye//
   goodbye(); 
   

@@ -251,7 +251,6 @@ void Replace_Words(string&word,const string replace,const string replace_too)
   return;
 }
 
-<<<<<<< HEAD
 void even_replace(string & sentence)
 {
   string first_word; //This is the actual string of the first word 
@@ -299,10 +298,7 @@ void even_replace(string & sentence)
   
 }
 
-void Un_Swap_Odd(string &sentence)
-=======
 void Un_Swap_Odd(string & sentence)
->>>>>>> d8510cecda3beab244deb4d4a0803f995199b715
 {
   int wordCnt = sentence_word_count(const string sentence);
   int t = 0;
@@ -353,16 +349,16 @@ void Un_Swap_Odd(string & sentence)
 void Destroy_Jibberish(string & word)
 {
   
-  if(word==Jibberish1)
+  if(word[0]==Jibberish1[0])
     word='\0';
   
-  if(word==Jibberish2)
+  if(word[0]==Jibberish2[0])
     word='\0';
   
-  if(word==Jibberish3)
+  if(word[0]==Jibberish3[0])
     word='\0';
   
-  if(word==Jibberish4)
+  if(word[0]==Jibberish4[0])
     word='\0';
   
 }
