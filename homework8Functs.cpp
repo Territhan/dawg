@@ -152,13 +152,13 @@ string break_into_sentence(const string Data,string & place)
       
       i++
     }
-    while(i<Data.lenth()&&!sentence_found);    
+    while(i<Data.length()&&!sentence_found);    
   return sentence;  
 }
 
 string break_into_words(const string sentence,int&word_end,int&word_len)
 {
-  string word; //This is the return value of the function
+  string word; //This is the return value of the function  
   static int t = 0; //This is a placeholder value 
   bool word_found = false;
   static int i =0; 
@@ -180,7 +180,7 @@ string break_into_words(const string sentence,int&word_end,int&word_len)
     }
     i++;
   }
-  while(i<sentence.lenth()&&!word_found);
+  while(i<sentence.length()&&!word_found);
   if
   word_end=i-1;
   word_len=word.length(); 
@@ -197,17 +197,51 @@ void Replace_Words(string&word,const string replace,const string replace_too)
   return;
 }
 
-void Un_Swap_Odd(char sentence[][][], const int SIZE)
+void Un_Swap_Odd(string &sentence)
 {
-  int max = sentence_word_count(sentence[], SIZE);//Max words in sentence
-  int replace_ctr = 0;//Words replaced in sentence
-  int sentence_ctr = 0;//Current sentence #
-
-    for(int i=replace_ctr;i<=max;i++)
-    { 
-      int word2 = i+1
-      
-    }
+  int wordCnt = sentence_word_count(const string sentence);
+  int t = 0;
+  int i = 0;
+  int j = 0;
+  bool word_found = false;
+  bool last_word=false;
+  string words[wordCnt];
+  //Copied from break_into_words
+  for(i;i<wordCnt;i++)
+  {
+    do
+    {
+      if(sentence[j]==' ')
+      {
+        if(t=0)
+        {
+          words[i]=sentence.substr(t,j-t);
+        }
+        else
+        {
+          words[i]=sentence.substr(t+1,j-t+1);
+        }
+        t=j;
+        word_found=true;
+      }
+      j++
+    } while(i<sentence.length()&&!word_found);
+  }
+  sentence = '\0';
+  for(int k=0;k<wordCnt;k+2)
+  {
+    strcat(sentence,words[k+1]);
+    strcat(sentence,' ');
+    strcat(sentence,words[k]);
+    strcat(sentence,' ');
+  }
+  if(wordCnt%2==0)
+  {
+    k--;
+    strcat(sentence,words[k]);
+    strcat(sentence,' ');
+  }
+  return sentence;
 }
 
 void Destroy_Jibberish(string & word)
