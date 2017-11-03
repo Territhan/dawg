@@ -108,7 +108,7 @@ string Read_in_File()
 int sentence_count(const string Data)
 {
   int sentence_amount = 0;
-  for(int i = 0;i<Data.length();i++; 
+  for(int i = 0;i<Data.length();i++) 
   {
     if(Data[i]=='?'||Data[i]=='!'||Data[i]=='.')
     {
@@ -237,7 +237,7 @@ void Replace_Words(string&word,const string replace,const string replace_too)
   return;
 }
 
-void Un_Swap_Odd(string &sentence)
+void Un_Swap_Odd(string & sentence)
 {
   int wordCnt = sentence_word_count(const string sentence);
   int t = 0;
